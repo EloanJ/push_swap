@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/20 20:14:17 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:40:15 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void	rrb(char	**tab);
 void	rrr(char **atab, char **btab);
 void	rr(char **atab, char **btab);
 void	ss(char **atab, char **btab);
+int		the_biggest(char *nbr, char **tabb);
+int		the_smallest(char *nbr, char **tabb);
 
 #endif

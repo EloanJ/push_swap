@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/25 18:16:14 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:31:50 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,9 @@ char	**av_dup(char **av, int ac)
 	return (res);
 }
 
-void	small_sort(int ac, char **av)
+void	small_sort(char **taba)
 {
-	char	**taba;
 
-	taba = av_dup(av, ac);
 	if (ft_atoi(taba[0]) < ft_atoi(taba[1])
 		&& ft_atoi(taba[1]) > ft_atoi(taba[2]))
 		rra(taba);
@@ -106,12 +104,13 @@ void	small_sort(int ac, char **av)
 int	main(int ac, char **av)
 {
 	char	**tabb = ft_calloc(sizeof(char *), ac - 1);
-	char	**taba = av_dup(av, ac);
+	char	**taba;
 
 
+	taba = av_dup(av, ac);
 	if (ac == 4)
 	{
-		small_sort(ac, av);
+		small_sort(taba);
 		return (0);
 	}
 	if (ft_tablen(taba) > 3)
@@ -119,8 +118,53 @@ int	main(int ac, char **av)
 		pb(taba, tabb);
 		pb(taba, tabb);
 	}
-	while (ft_tablen(taba) != 3)
+	if (ft_atoi(tabb[0]) < ft_atoi(tabb[1]))
+		sb(tabb);
+	while (ft_tablen(taba) > 3)
 	{
-		return ;
+		if (the_biggest(taba[0], tabb) == 1)
+		{
+			while (the_biggest(tabb[0], tabb) != 1)
+				rb(tabb);
+			pb(taba, tabb);
+		}
+		else if (the_smallest(taba[0], tabb) == 1)
+		{
+			while (the_biggest(tabb[0], tabb) != 1)
+				rrb(tabb);
+			pb(taba, tabb);
+		}
+		else
+		{
+			while (!(ft_atoi(taba[0]) > ft_atoi(tabb[0])
+				&& ft_atoi(taba[0]) < ft_atoi(tabb[ft_tablen(tabb) - 1])))
+				rb(tabb);
+			pb(taba, tabb);
+		}
+	}
+	while (!the_biggest(tabb[0], tabb))
+		rrb(tabb);
+	small_sort(taba);
+	while(tabb[0])
+	{
+		if (the_biggest(tabb[0], taba) == 1)
+		{
+			while (the_smallest(taba[0], taba) != 1)
+				rra(taba);
+			pa(taba, tabb);
+		}
+		else if (the_smallest(tabb[0], taba))
+		{
+			while (the_smallest(taba[0], taba) != 1)
+				rra(taba);
+			pa(taba, tabb);
+		}
+		else
+		{
+			while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
+				&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
+				rra(taba);
+			pa(taba, tabb);
+		}
 	}
 }

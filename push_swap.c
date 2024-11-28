@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/26 16:31:50 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:19:40 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	small_sort(char **taba)
 		sa(taba);
 }
 
-int	main(int ac, char **av)
+/* int	main(int ac, char **av)
 {
 	char	**tabb = ft_calloc(sizeof(char *), ac - 1);
 	char	**taba;
@@ -125,20 +125,20 @@ int	main(int ac, char **av)
 		if (the_biggest(taba[0], tabb) == 1)
 		{
 			while (the_biggest(tabb[0], tabb) != 1)
-				rb(tabb);
+				rrb(tabb);
 			pb(taba, tabb);
 		}
 		else if (the_smallest(taba[0], tabb) == 1)
 		{
 			while (the_biggest(tabb[0], tabb) != 1)
-				rrb(tabb);
+				rb(tabb);
 			pb(taba, tabb);
 		}
 		else
 		{
 			while (!(ft_atoi(taba[0]) > ft_atoi(tabb[0])
 				&& ft_atoi(taba[0]) < ft_atoi(tabb[ft_tablen(tabb) - 1])))
-				rb(tabb);
+				rrb(tabb);
 			pb(taba, tabb);
 		}
 	}
@@ -167,4 +167,93 @@ int	main(int ac, char **av)
 			pa(taba, tabb);
 		}
 	}
+} */
+
+
+int	main(int ac, char **av)
+{
+	char	**taba;
+	char	**tabb;
+	int		med;
+	int		i;
+
+	taba = av_dup(av, ac);
+	if  (!taba)
+		return (0);
+	tabb = ft_calloc(sizeof(char *), ac - 1);
+	if (!tabb)
+		return (0);
+	i = 0;
+	med = 0;
+	while (taba[i]) //make fn find med /////////////////////////////////////////////////////
+	{
+		med += ft_atoi(taba[i]);
+		i++;
+	}
+	med = med / (ac - 1);
+	if (ft_tablen(taba) > 3)
+	{
+		pb(taba, tabb);
+		pb(taba, tabb);
+	}
+	if (ft_atoi(tabb[0]) < ft_atoi(tabb[1]))
+		sb(tabb);
+	while (ft_tablen(taba) > 3)
+	{
+		if(ft_atoi(taba[0]) > med)
+		{
+			pb(taba, tabb);
+			rb(tabb);
+		}
+		else
+			pb(taba, tabb);
+	}
+	small_sort(taba);
+	while(tabb[0])
+	{
+		i = 0;
+		if (the_biggest(tabb[0], taba) == 1)
+		{
+			if (preswap2(taba) == 1)
+				while (the_smallest(taba[0], taba) != 1)
+					ra(taba);
+			else if (preswap2(taba) == 0)
+				while (the_smallest(taba[0], taba) != 1)
+					rra(taba);
+			pa(taba, tabb);
+			ra(taba);
+		}
+		else if (the_smallest(tabb[0], taba))
+		{
+			if (preswap2(taba) == 1)
+				while (the_smallest(taba[0], taba) != 1)
+					ra(taba);
+			else if (preswap2(taba) == 0)
+				while (the_smallest(taba[0], taba) != 1)
+					rra(taba);
+			pa(taba, tabb);
+		}
+		else
+		{
+			if (preswap(taba, tabb[0]) == 1)
+			{
+				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
+					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
+					ra(taba);
+			}
+			else if (preswap(taba, tabb[0]) == 0)
+			{
+				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
+					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
+					rra(taba);
+			}
+			pa(taba, tabb);
+		} 
+	}
+	if (preswap2(taba) == 1)
+		while (the_smallest(taba[0], taba) != 1)
+			ra(taba);
+	else if (preswap2(taba) == 0)
+		while (the_smallest(taba[0], taba) != 1)
+			rra(taba);
 }

@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:08:22 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/28 16:30:30 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/03 17:07:41 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,36 +65,86 @@ char	**tab_dup(char **tab, int len)
 	return (res);
 }
 
-int	preswap(char **tab, char *value)
+int	ra_try(char **tab, char *value)
 {
 	int	i;
-	int	j;
+	
 	char **clone;
-	char **clone2;
+	
 
 	clone = tab_dup(tab, ft_tablen(tab) + 1);
 	if (!clone)
 		return(-1);
 	i = 0;
-	j = 0;
 	while (!(ft_atoi(value) < ft_atoi(clone[0])
 		&& ft_atoi(value) > ft_atoi(clone[ft_tablen(clone) - 1])))
 	{
 		quiet_ra(clone);
 		i++;
 	}
+	free(clone);
+	return (i);
+}
+
+int	rra_try(char **tab, char *value)
+{
+	char **clone2;
+	int	j;
+
 	clone2 = tab_dup(tab, ft_tablen(tab) + 1);
 	if (!clone2)
 		return(-1);
+	j = 0;
 	while (!(ft_atoi(value) < ft_atoi(clone2[0])
 		&& ft_atoi(value) > ft_atoi(clone2[ft_tablen(clone2) - 1])))
 	{
 		quiet_rra(clone2);
 		j++;
 	}
-	if (i < j)
-		return (1);
-	return (0);
+	free(clone2);
+	return (j);
+}
+
+int	rb_try(char **tab, char *value)
+{
+	int	i;
+	
+	char **clone;
+	
+
+	clone = tab_dup(tab, ft_tablen(tab) + 1);
+	if (!clone)
+		return(-1);
+	i = 0;
+	while (!(ft_atoi(value) < ft_atoi(clone[0])
+		&& ft_atoi(value) > ft_atoi(clone[ft_tablen(clone) - 1])))
+	{
+		quiet_rb(clone);
+		i++;
+	}
+	free(clone);
+	return (i);
+}
+
+int	rrb_try(char **tab, char *value)
+{
+	int	i;
+	
+	char **clone;
+	
+
+	clone = tab_dup(tab, ft_tablen(tab) + 1);
+	if (!clone)
+		return(-1);
+	i = 0;
+	while (!(ft_atoi(value) < ft_atoi(clone[0])
+		&& ft_atoi(value) > ft_atoi(clone[ft_tablen(clone) - 1])))
+	{
+		quiet_rrb(clone);
+		i++;
+	}
+	free(clone);
+	return (i);
 }
 
 int	preswap2(char **tab)
@@ -123,4 +173,25 @@ int	preswap2(char **tab)
 	if (i < j)
 		return (1);
 	return (0);
+}
+
+int	best_moove(char **taba, char **tabb)
+{
+	int	nb_ra;
+	int	nb_rra;
+	int	nb_rb;
+	int nb_rrb;
+
+	nb_ra = ra_try(taba, tabb[0]);
+	nb_rra = rra_try(taba, tabb[0]);
+	nb_rb = rb_try(tabb, taba[0]);
+	nb_rrb = rrb_try(tabb, taba[0]);
+	if (nb_ra > nb_rra && nb_ra > nb_rb && nb_ra > nb_rrb)
+		return (1);
+	if (nb_rra > nb_ra && nb_rra > nb_rb && nb_rra > nb_rrb)
+		return (2);
+	if (nb_rb > nb_rra && nb_rb > nb_ra && nb_rb > nb_rrb)
+		return (3);
+	if (nb_rrb > nb_rra && nb_rrb > nb_rb && nb_rrb > nb_ra)
+		return (4);
 }

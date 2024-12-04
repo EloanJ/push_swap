@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/03 15:53:12 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/04 14:43:39 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,17 +167,29 @@ int	main(int ac, char **av)
 		else
 		{
 	
-			if (preswap(taba, tabb[0]) == 1)
+			if (best_moove(taba, tabb) == 1)
 			{
 				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
 					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
 					ra(taba);
 			}
-			else if (preswap(taba, tabb[0]) == 0)
+			else if (best_moove(taba, tabb) == 2)
 			{
 				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
 					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
 					rra(taba);
+			}
+			else if (best_moove(taba, tabb) == 3)
+			{
+				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
+					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
+					rb(tabb);
+			}
+			else if (best_moove(taba, tabb) == 4)
+			{
+				while (!(ft_atoi(tabb[0]) < ft_atoi(taba[0])
+					&& ft_atoi(tabb[0]) > ft_atoi(taba[ft_tablen(taba) - 1])))
+					rrb(tabb);
 			}
 			pa(taba, tabb);
 		} 

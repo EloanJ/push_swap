@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:08:22 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/03 17:07:41 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/04 18:08:31 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,14 +184,15 @@ int	best_moove(char **taba, char **tabb)
 
 	nb_ra = ra_try(taba, tabb[0]);
 	nb_rra = rra_try(taba, tabb[0]);
-	nb_rb = rb_try(tabb, taba[0]);
-	nb_rrb = rrb_try(tabb, taba[0]);
-	if (nb_ra > nb_rra && nb_ra > nb_rb && nb_ra > nb_rrb)
+	nb_rb = rb_try(taba, tabb[0]);
+	nb_rrb = rrb_try(taba, tabb[0]);
+	printf("%i\n%i\n%i\n%i\n", nb_ra, nb_rra, nb_rb, nb_rrb);
+	if (nb_ra <= nb_rra && nb_ra <= nb_rb && nb_ra <= nb_rrb)
 		return (1);
-	if (nb_rra > nb_ra && nb_rra > nb_rb && nb_rra > nb_rrb)
+	else if (nb_rra <= nb_ra && nb_rra <= nb_rb && nb_rra <= nb_rrb)
 		return (2);
-	if (nb_rb > nb_rra && nb_rb > nb_ra && nb_rb > nb_rrb)
+	else if (nb_rb <= nb_rra && nb_rb <= nb_ra && nb_rb <= nb_rrb)
 		return (3);
-	if (nb_rrb > nb_rra && nb_rrb > nb_rb && nb_rrb > nb_ra)
+	else
 		return (4);
 }

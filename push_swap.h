@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/03 14:36:44 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/04 14:31:50 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void	ss(char **atab, char **btab);
 int		the_biggest(char *nbr, char **tabb);
 int		the_smallest(char *nbr, char **tabb);
 char	**av_dup(char **av, int ac);
-int		preswap(char **tab, char *value);
 int		preswap2(char **tab);
-int		sb_try(char	**tab, char *value);
+int		best_moove(char **taba, char **tabb);
 
 #endif

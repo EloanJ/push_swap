@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/04 14:43:39 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:53:19 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,9 @@ int	main(int ac, char **av)
 {
 	char	**taba;
 	char	**tabb;
-	int		med;
-	int		i;
+	int		j;
+	int		group_len;
+	int		r;
 
 	taba = av_dup(av, ac);
 	if  (!taba)
@@ -114,35 +115,43 @@ int	main(int ac, char **av)
 	tabb = ft_calloc(sizeof(char *), ac - 1);
 	if (!tabb)
 		return (0);
-	i = 0;
-	med = 0;
-	while (taba[i]) //make fn find med /////////////////////////////////////////////////////
-	{
-		med += ft_atoi(taba[i]);
-		i++;
-	}
-	med = med / (ac - 1);
-	if (ft_tablen(taba) > 3)
-	{
-		pb(taba, tabb);
-		pb(taba, tabb);
-	}
-	if (ft_atoi(tabb[0]) < ft_atoi(tabb[1]))
-		sb(tabb);
+	group_len = (ac - 4) / 8;
+	if (group_len < 1)
+		group_len = 1;
+	j = group_len;
 	while (ft_tablen(taba) > 3)
 	{
-		if(ft_atoi(taba[0]) > med)
+		r = 0;
+		while (r <ft_tablen(taba) && taba[0])
 		{
-			pb(taba, tabb);
-			rb(tabb);
+			
+			if (ft_atoi(taba[0]) >= (j - group_len) && ft_atoi(taba[0]) < j)
+				pb(taba,tabb);
+			else if (ft_atoi(taba[0]) >= j && ft_atoi(taba[0]) < (j + group_len))
+			{
+				pb(taba, tabb);
+				rb(tabb);
+			}
+			else
+			{
+				ra(taba);
+				r++;
+			}
 		}
-		else
-			pb(taba, tabb);
+		j += group_len * 2;
+		
 	}
-	small_sort(taba);
+	if (ft_tablen(taba) == 3)
+		small_sort(taba);
+	else
+	{
+		pa(taba, tabb);
+		pa(taba, tabb);
+		pa(taba, tabb);
+		small_sort(taba);
+	}	
 	while(tabb[0])
 	{
-		i = 0;
 		if (the_biggest(tabb[0], taba) == 1)
 		{
 			if (preswap2(taba) == 1)

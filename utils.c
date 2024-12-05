@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:08:22 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/04 18:08:31 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/04 18:22:47 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,6 @@ int	best_moove(char **taba, char **tabb)
 	nb_rra = rra_try(taba, tabb[0]);
 	nb_rb = rb_try(taba, tabb[0]);
 	nb_rrb = rrb_try(taba, tabb[0]);
-	printf("%i\n%i\n%i\n%i\n", nb_ra, nb_rra, nb_rb, nb_rrb);
 	if (nb_ra <= nb_rra && nb_ra <= nb_rb && nb_ra <= nb_rrb)
 		return (1);
 	else if (nb_rra <= nb_ra && nb_rra <= nb_rb && nb_rra <= nb_rrb)

@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 12:55:58 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:01:15 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,14 @@ int	main(int ac, char **av)
 	char	**taba;
 	char	**tabb;
 
+	if (check_input(ac, av) == 0)
+		return (aff_error());
 	taba = av_dup(av, ac);
 	if (!taba)
 		return (0);
 	tabb = ft_calloc(sizeof(char *), ac - 1);
 	if (!tabb)
-		return (0);
+		return (free_tab(taba), 0);
 	push_groups(taba, tabb, ac);
 	while (tabb[0])
 		push_back(taba, tabb);
@@ -120,4 +122,5 @@ int	main(int ac, char **av)
 	else if (preswap2(taba) == 0)
 		while (the_smallest(taba[0], taba) != 1)
 			rra(taba);
+	free_tabs(taba, tabb);
 }

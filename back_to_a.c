@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:37:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 14:21:42 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:03:20 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,43 @@ void	push_back(char **taba, char **tabb)
 			pa(taba, tabb);
 		}
 	}
+}
+
+void	free_tabs(char **taba, char **tabb)
+{
+	int	i;
+
+	i = 0;
+	while (taba[i])
+	{
+		free(taba[i]);
+		i++;
+	}
+	i = 0;
+	while (tabb[i])
+	{
+		free(tabb[i]);
+		i++;
+	}
+	free(taba);
+	free(tabb);
+}
+
+void	free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
+int	aff_error(void)
+{
+	write(1, "Error\n", 6);
+	return (0);
 }

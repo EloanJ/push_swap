@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:01:14 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 14:32:52 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:48:25 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ra_try(char **tab, char *value)
 		quiet_ra(clone);
 		i++;
 	}
-	free(clone);
+	free_tab(clone);
 	return (i);
 }
 
@@ -46,7 +46,7 @@ int	rra_try(char **tab, char *value)
 		quiet_rra(clone2);
 		j++;
 	}
-	free(clone2);
+	free_tab(clone2);
 	return (j);
 }
 

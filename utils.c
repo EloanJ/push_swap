@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:08:22 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 12:06:49 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:47:17 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int	preswap2(char **tab)
 		j++;
 	}
 	if (i < j)
-		return (1);
-	return (0);
+		return (free_tabs(clone, clone2), 1);
+	return (free_tabs(clone, clone2), 0);
 }

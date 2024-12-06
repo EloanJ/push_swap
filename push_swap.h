@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 14:00:41 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:03:23 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ char	**tab_dup(char **tab, int len);
 void	small_sort(char **taba);
 void	push_groups(char **taba, char **tabb, int ac);
 void	push_back(char **taba, char **tabb);
+void	free_tabs(char **taba, char **tabb);
+void	free_tab(char **tab);
+int		aff_error(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/04 14:31:50 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:00:41 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "libft/libft.h"
 # include <stdio.h>/////////////////////////////////////
 
-//int		*aaraytoiaray(char **av, int ac);
 int		ft_tablen(char **tab);
 void	rra(char	**tab);
 void	ra(char **tab);
@@ -38,5 +37,9 @@ int		the_smallest(char *nbr, char **tabb);
 char	**av_dup(char **av, int ac);
 int		preswap2(char **tab);
 int		best_moove(char **taba, char **tabb);
+char	**tab_dup(char **tab, int len);
+void	small_sort(char **taba);
+void	push_groups(char **taba, char **tabb, int ac);
+void	push_back(char **taba, char **tabb);
 
 #endif

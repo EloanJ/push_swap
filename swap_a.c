@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:07:05 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/25 15:46:02 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 12:06:02 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	sa(char **tab)
 		tab[1] = tmp;
 		ft_printf("sa\n");
 	}
-	
 }
 
 void	pa(char	**atab, char	**btab)

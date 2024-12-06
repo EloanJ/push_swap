@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 10:07:45 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/25 15:41:05 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 12:08:46 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_putx(unsigned int nbr, char *base)
 int	ft_putunsigned_iter(unsigned int n)
 {
 	int	res;
-	int	pow; 
+	int	pow;
 
 	res = 0;
 	pow = intlen(n) - 2;

@@ -6,12 +6,11 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 19:41:51 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/25 15:46:28 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 12:07:37 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	sb(char **tab)
 {

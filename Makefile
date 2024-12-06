@@ -6,7 +6,7 @@
 #    By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 19:53:51 by ejonsery          #+#    #+#              #
-#    Updated: 2024/11/28 14:53:38 by ejonsery         ###   ########.fr        #
+#    Updated: 2024/12/06 12:46:33 by ejonsery         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRC = combo.c \
 		swap_a.c\
 		swap_b.c\
 		utils.c\
-		quiet.c
+		quiet.c\
+		best_moove.c\
+		back_to_a.c
 
 OBJ = ${SRC:.c=.o}
 

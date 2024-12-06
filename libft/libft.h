@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:26:36 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/11/25 15:43:02 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 12:08:25 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_putchar_count(char c);
-int     ft_putstr_count(char *str);	
-int     ft_printf(const char *str, ...);
-int     ft_putadr(unsigned long int n, char *base);
-int     ft_checkadr(unsigned long int n, char *base);
-size_t  ft_strlen(const char *s);
-int     intlen(unsigned int n);
-int     ft_putnbr_iter(int n);
-int     power(int n, int pow);
-int     ft_putunsigned_iter(unsigned int n);
-int     ft_putx(unsigned int nbr, char *base);
+int		ft_putstr_count(char *str);	
+int		ft_printf(const char *str, ...);
+int		ft_putadr(unsigned long int n, char *base);
+int		ft_checkadr(unsigned long int n, char *base);
+size_t	ft_strlen(const char *s);
+int		intlen(unsigned int n);
+int		ft_putnbr_iter(int n);
+int		power(int n, int pow);
+int		ft_putunsigned_iter(unsigned int n);
+int		ft_putx(unsigned int nbr, char *base);
 
 typedef struct s_list
 {

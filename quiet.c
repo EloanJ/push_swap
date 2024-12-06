@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:33:47 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/03 14:20:16 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/06 11:53:41 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,4 @@ void	quiet_rrb(char	**tab)
 	}
 	tab[0] = tmp;
 	tab[ft_tablen(tab) - 1] = NULL;
-}
-
-void	quiet_sb(char **tab)
-{
-	char	*tmp;
-
-	if (tab[0] && tab[1])
-	{
-		tmp = tab[0];
-		tab[0] = tab[1];
-		tab[1] = tmp;
-	}
 }

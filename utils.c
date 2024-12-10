@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:08:22 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 14:47:17 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:04:12 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_tablen(char **tab)
 	int	i;
 
 	i = 0;
+	if (!tab || !*tab)
+		return (0);
 	while (tab[i])
 		i++;
 	return (i);

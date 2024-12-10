@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:01:14 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 15:48:25 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:08:37 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void	push_groups(char **taba, char **tabb, int ac)
 	int	group_len;
 	int	j;
 
-	group_len = (ac - 4) / 8;
+	(void)ac;
+	group_len = (ft_tablen(taba) - 3) / (power_of_two(ft_tablen(taba)));
 	if (group_len < 1)
 		group_len = 1;
 	j = group_len;

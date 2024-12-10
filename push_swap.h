@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 15:03:23 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:51:39 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	push_back(char **taba, char **tabb);
 void	free_tabs(char **taba, char **tabb);
 void	free_tab(char **tab);
 int		aff_error(void);
+int		power_of_two(int nb);
 
 #endif

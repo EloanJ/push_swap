@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 15:01:15 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:53:58 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ char	**av_dup(char **av, int ac)
 
 	i = 1;
 	j = 0;
-	res = ft_calloc(sizeof(char *), ac);
+	(void)ac;
+	res = ft_calloc(sizeof(char *), ft_tablen(av) + 1);
 	while (av[i])
 	{
 		res[j] = ft_strdup(av[i]);
@@ -107,10 +108,13 @@ int	main(int ac, char **av)
 
 	if (check_input(ac, av) == 0)
 		return (aff_error());
-	taba = av_dup(av, ac);
+	if (ac == 2)
+		taba = ft_split(av[1], ' ');
+	else
+		taba = av_dup(av, ac);
 	if (!taba)
 		return (0);
-	tabb = ft_calloc(sizeof(char *), ac - 1);
+	tabb = ft_calloc(sizeof(char *), ft_tablen(taba));
 	if (!tabb)
 		return (free_tab(taba), 0);
 	push_groups(taba, tabb, ac);

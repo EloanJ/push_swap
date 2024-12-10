@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:28 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/10/23 12:34:16 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:10:53 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(const char *nptr)
 	int	n;
 	int	res;
 
+	if (!nptr)
+		return (0);
 	i = 0;
 	n = 1;
 	res = 0;

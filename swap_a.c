@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:07:05 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 12:06:02 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:07:41 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,13 @@ void	rra(char	**tab)
 	char	*tmp;
 	int		i;
 
-	i = ft_tablen(tab);
-	tmp = tab[i - 1];
+	i = ft_tablen(tab) - 1;
+	tmp = tab[i];
 	while (i > 0)
 	{
 		tab[i] = tab[i - 1];
 		i--;
 	}
 	tab[0] = tmp;
-	tab[ft_tablen(tab) - 1] = NULL;
 	ft_printf("rra\n");
 }

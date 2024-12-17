@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:48:38 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/10 15:53:58 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:24:58 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_input(int ac, char **argv)
 	j = 1;
 	while (i < ac)
 	{
-		if (!ft_isnumber(argv[i]))
+		if (!(argv[i]))
 			return (0);
 		if (ft_atol(argv[i]) > 2147483647 || ft_atol(argv[i]) < -2147483648)
 			return (0);
@@ -81,50 +81,28 @@ char	**av_dup(char **av, int ac)
 	return (res);
 }
 
-void	small_sort(char **taba)
-{
-	if (ft_atoi(taba[0]) < ft_atoi(taba[1])
-		&& ft_atoi(taba[1]) > ft_atoi(taba[2]))
-		rra(taba);
-	if (ft_atoi(taba[0]) > ft_atoi(taba[1])
-		&& ft_atoi(taba[1]) > ft_atoi(taba[2]))
-		rra(taba);
-	if (ft_atoi(taba[0]) < ft_atoi(taba[1])
-		&& ft_atoi(taba[1]) > ft_atoi(taba[2]))
-		rra(taba);
-	if (ft_atoi(taba[0]) > ft_atoi(taba[1])
-		&& ft_atoi(taba[1]) < ft_atoi(taba[2])
-		&& ft_atoi(taba[0]) > ft_atoi(taba[2]))
-		ra(taba);
-	if (ft_atoi(taba[0]) > ft_atoi(taba[1])
-		&& ft_atoi(taba[1]) < ft_atoi(taba[2]))
-		sa(taba);
-}
-
 int	main(int ac, char **av)
 {
 	char	**taba;
 	char	**tabb;
 
-	if (check_input(ac, av) == 0)
-		return (aff_error());
+	if (check_input(ac, av) == 0 || ac == 1)
+		return (aff_error(ac));
 	if (ac == 2)
 		taba = ft_split(av[1], ' ');
 	else
 		taba = av_dup(av, ac);
 	if (!taba)
 		return (0);
+	is_sort(taba);
 	tabb = ft_calloc(sizeof(char *), ft_tablen(taba));
 	if (!tabb)
-		return (free_tab(taba), 0);
+		return (free_tabs(taba, NULL), 0);
+	if (ft_tablen(taba) == 5)
+		sort_five(taba, tabb);
 	push_groups(taba, tabb, ac);
 	while (tabb[0])
 		push_back(taba, tabb);
-	if (preswap2(taba) == 1)
-		while (the_smallest(taba[0], taba) != 1)
-			ra(taba);
-	else if (preswap2(taba) == 0)
-		while (the_smallest(taba[0], taba) != 1)
-			rra(taba);
+	right_order(taba);
 	free_tabs(taba, tabb);
 }

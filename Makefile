@@ -6,7 +6,7 @@
 #    By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 19:53:51 by ejonsery          #+#    #+#              #
-#    Updated: 2024/12/06 12:46:33 by ejonsery         ###   ########.fr        #
+#    Updated: 2024/12/17 13:00:20 by ejonsery         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,14 @@ SRC = combo.c \
 		utils.c\
 		quiet.c\
 		best_moove.c\
-		back_to_a.c
+		back_to_a.c \
+		quick_sort.c
 
 OBJ = ${SRC:.c=.o}
 
 INCLUDES = -I .
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g3
 
 MAKELIB = ${MAKE} -C ./libft
 
@@ -37,7 +38,7 @@ all : ${NAME}
 
 ${NAME} : ${OBJ}
 	${MAKELIB}
-	${CC} -o ${NAME} ${SRC} ${LIBFT} ${INCLUDES} ${FLAGS} -g3
+	${CC} -o ${NAME} ${SRC} ${LIBFT} ${INCLUDES} ${FLAGS}
 
 %.o : %.c
 	${CC} ${FLAGS} ${INCLUDES} -c $< -o $@

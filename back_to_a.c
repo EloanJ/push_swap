@@ -6,11 +6,29 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:37:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 15:03:20 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:42:21 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	is_sort(char **taba)
+{
+	int i;
+
+	i = 1;
+	while (taba[i])
+	{
+		if (ft_atoi(taba[i - 1]) > ft_atoi(taba[i]))
+			break;
+		i++;
+	}
+	if (ft_tablen(taba) == i)
+	{
+		free_tabs(taba, NULL);
+		exit(1);
+	}
+}
 
 void	swap_for_small_or_big(char **taba, char **tabb)
 {
@@ -65,30 +83,21 @@ void	free_tabs(char **taba, char **tabb)
 		i++;
 	}
 	i = 0;
-	while (tabb[i])
+	if (tabb)
 	{
-		free(tabb[i]);
-		i++;
+		while (tabb[i])
+		{
+			free(tabb[i]);
+			i++;
+		}
+		free(tabb);
 	}
 	free(taba);
-	free(tabb);
 }
 
-void	free_tab(char **tab)
+int	aff_error(int n)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
-
-int	aff_error(void)
-{
-	write(1, "Error\n", 6);
+	if (n > 1)
+		write(1, "Error\n", 6);
 	return (0);
 }

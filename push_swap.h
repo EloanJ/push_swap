@@ -6,14 +6,20 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/10 14:51:39 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:04:25 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
-# include <stdio.h>/////////////////////////////////////
+# include <stdio.h>//////////////////////////////////////////////////////////////////
+
+typedef struct s_id_val
+{
+	char*		value;
+	char*		id;
+}	t_id_val;
 
 int		ft_tablen(char **tab);
 void	rra(char	**tab);
@@ -42,8 +48,10 @@ void	small_sort(char **taba);
 void	push_groups(char **taba, char **tabb, int ac);
 void	push_back(char **taba, char **tabb);
 void	free_tabs(char **taba, char **tabb);
-void	free_tab(char **tab);
-int		aff_error(void);
+int		aff_error(int n);
 int		power_of_two(int nb);
+void	is_sort(char **taba);
+void	sort_five(char **taba, char **tabb);
+void	right_order(char **taba);
 
 #endif

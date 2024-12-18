@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:01:14 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/17 17:07:39 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:33:25 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,52 +62,12 @@ int	best_moove(char **taba, char **tabb)
 	else
 		return (2);
 }
-int    ft_find_min(char **tab)
-{
-    char    *min;
-    int        i;
-
-    i = 0;
-    min = tab[0];
-    while (tab[i])
-    {
-        if (ft_atoi(tab[i]) < ft_atoi(min))
-            min = tab[i];
-        i++;
-    }
-    return (ft_atoi(min));
-}
-
-int    ft_find_end(char **t_a, int distance)
-{
-	int    min;
-	int    i;
-	int    j = 0;
-	int    *tab;
-
-	tab = ft_calloc(sizeof(int), distance + 1);
-	tab[0] = ft_find_min(t_a);
-	while (distance--)
-	{
-		i = 0;
-		min = __INT_MAX__;
-		while (t_a[i])
-		{
-			if ((ft_atoi(t_a[i]) != tab[j]) && (ft_atoi(t_a[i]) > tab[j]) && (ft_atoi(t_a[i]) < min))
-				min = ft_atoi(t_a[i]);
-			i++;
-		}
-		tab[++j] = min;
-	}
-	min = tab[j];
-	return (free(tab), min);
-}
 
 void	do_push(char **taba, char **tabb, int j, int group_len)
 {
 	int	r;
 	int	min;
-	int other_end;
+	int	other_end;
 
 	r = 0;
 	j = ft_find_end(taba, group_len);

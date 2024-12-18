@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:26:36 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/06 12:08:25 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:52:10 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int		ft_putstr_count(char *str);
 int		ft_printf(const char *str, ...);
 int		ft_putadr(unsigned long int n, char *base);
 int		ft_checkadr(unsigned long int n, char *base);
-size_t	ft_strlen(const char *s);
 int		intlen(unsigned int n);
 int		ft_putnbr_iter(int n);
 int		power(int n, int pow);

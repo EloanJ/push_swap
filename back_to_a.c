@@ -6,7 +6,7 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:37:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/17 12:42:21 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:19:10 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	is_sort(char **taba)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (taba[i])
 	{
 		if (ft_atoi(taba[i - 1]) > ft_atoi(taba[i]))
-			break;
+			break ;
 		i++;
 	}
 	if (ft_tablen(taba) == i)
@@ -98,6 +98,6 @@ void	free_tabs(char **taba, char **tabb)
 int	aff_error(int n)
 {
 	if (n > 1)
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 	return (0);
 }

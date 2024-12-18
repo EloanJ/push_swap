@@ -6,20 +6,13 @@
 /*   By: ejonsery <ejonsery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:42 by ejonsery          #+#    #+#             */
-/*   Updated: 2024/12/17 15:04:25 by ejonsery         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:26:36 by ejonsery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
-# include <stdio.h>//////////////////////////////////////////////////////////////////
-
-typedef struct s_id_val
-{
-	char*		value;
-	char*		id;
-}	t_id_val;
 
 int		ft_tablen(char **tab);
 void	rra(char	**tab);
@@ -27,7 +20,6 @@ void	ra(char **tab);
 void	quiet_rra(char	**tab);
 void	quiet_ra(char **tab);
 void	sb(char **tab);
-void	quiet_sb(char **tab);
 void	sa(char **tab);
 void	pb(char	**atab, char	**btab);
 void	pa(char	**atab, char	**btab);
@@ -53,5 +45,7 @@ int		power_of_two(int nb);
 void	is_sort(char **taba);
 void	sort_five(char **taba, char **tabb);
 void	right_order(char **taba);
+int		ft_find_end(char **t_a, int distance);
+int		ft_find_min(char **tab);
 
 #endif

@@ -34,11 +34,9 @@ int	power_of_two(int nb)
 {
 	int	i;
 	int	res;
-	int	two;
 
 	res = 2;
 	i = 1;
-	two = 2;
 	while (res <= nb)
 	{
 		res = res * 2;

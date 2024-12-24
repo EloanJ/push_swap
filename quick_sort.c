@@ -44,9 +44,7 @@ void	small_sort(char **taba)
 
 void	sort_five(char **taba, char **tabb)
 {
-	int	i;
 
-	i = 0;
 	while (ft_tablen(taba) != 3)
 		pb(taba, tabb);
 	small_sort(taba);
